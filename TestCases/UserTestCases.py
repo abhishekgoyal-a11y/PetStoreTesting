@@ -24,3 +24,8 @@ def delete_user_test(url, username, expected_status_code):
     user = UserEndPoints(url)
     response = user.delete_user(username)
     assert response.status_code==expected_status_code, f"Expected status code {expected_status_code}, but got {response.status_code}. Error message: {response.text}"
+
+def user_logout_test(url, expected_status_code):
+    user = UserEndPoints(url)
+    response = user.user_logout()
+    assert response.status_code == expected_status_code, f"Expected status code {expected_status_code}, but got {response.status_code}. Error message: {response.text}"
