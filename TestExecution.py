@@ -31,3 +31,9 @@ def test_execute_users(action, user_id, username, newUsername, firstName, lastNa
 def test_execute_users(action, order_id, pet_id, quantity, shipDate, status, complete, expected_status_code):
     if action == "create_order_test":
         create_order_test(url, order_id, pet_id, quantity, shipDate, status, complete, expected_status_code)
+    elif action == "get_order_test":
+        get_order_test(url, order_id, expected_status_code)
+    elif action == "delete_order_test":
+        delete_order_test(url, order_id, expected_status_code)
+    elif action == "get_inventory_test":
+        get_inventory_test(url, expected_status_code)
