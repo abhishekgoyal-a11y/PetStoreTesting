@@ -1,6 +1,7 @@
 import os
 import pytest
 from Config import DefaultsConfig
+from TestCases.StoreTestCases import *
 from TestCases.UserTestCases import *
 from TestDataManagement import TestDataManagement
 
@@ -11,8 +12,8 @@ def setup_module():
     url = defaults_config.get_config_value("url")
 
 @pytest.mark.parametrize("action, user_id, username, newUsername, firstName, lastName, email, password, phone, userStatus, expected_status_code",
-                         TestDataManagement().read_test_data("Users").values)
-def test_execute(action, user_id, username, newUsername, firstName, lastName, email, password, phone, userStatus, expected_status_code):
+                         TestDataManagement().read_test_data("Users", "Users").values)
+def test_execute_users(action, user_id, username, newUsername, firstName, lastName, email, password, phone, userStatus, expected_status_code):
 
     if action == "create_user_test":
         create_user_test(url, user_id, username, firstName, lastName, email, password, phone, userStatus, expected_status_code)
@@ -24,3 +25,9 @@ def test_execute(action, user_id, username, newUsername, firstName, lastName, em
         delete_user_test(url, username, expected_status_code)
     elif action == "update_user_test":
         update_user_test(url, user_id, username, newUsername, firstName, lastName, email, password, phone, userStatus, expected_status_code)
+
+@pytest.mark.parametrize("action, order_id, pet_id, quantity, shipDate, status, complete, expected_status_code",
+                         TestDataManagement().read_test_data("Stores", "Stores").values)
+def test_execute_users(action, order_id, pet_id, quantity, shipDate, status, complete, expected_status_code):
+    if action == "create_order_test":
+        create_order_test(url, order_id, pet_id, quantity, shipDate, status, complete, expected_status_code)
