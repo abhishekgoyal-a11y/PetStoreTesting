@@ -29,7 +29,7 @@ def test_execute_users(action, user_id, username, newUsername, firstName, lastNa
 
 @pytest.mark.parametrize("action, order_id, pet_id, quantity, shipDate, status, complete, expected_status_code",
                          TestDataManagement().read_test_data("Stores", "Stores").values)
-def test_execute_users(action, order_id, pet_id, quantity, shipDate, status, complete, expected_status_code):
+def test_execute_order(action, order_id, pet_id, quantity, shipDate, status, complete, expected_status_code):
     if action == "create_order_test":
         create_order_test(url, order_id, pet_id, quantity, shipDate, status, complete, expected_status_code)
     elif action == "get_order_test":
@@ -41,6 +41,6 @@ def test_execute_users(action, order_id, pet_id, quantity, shipDate, status, com
 
 @pytest.mark.parametrize("action, payload, expected_status_code",
                          TestDataManagement().read_test_data("Pets", "Pets").values)
-def test_execute_users(action, payload, expected_status_code):
+def test_execute_pet(action, payload, expected_status_code):
     if action == "create_pet_test":
         create_pet_test(url, payload, expected_status_code)
