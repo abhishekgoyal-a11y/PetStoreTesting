@@ -53,7 +53,7 @@ To get started with this framework, follow these steps:
 
 1. Clone the repository from GitHub.
 2. Install the required dependencies using the provided requirements.txt file.
-3. Execute the test scripts using Pytest to run the automated API tests.
+3. Execute the Main.py python script to run the automated API tests.
 
 ## HTML Reports
 
