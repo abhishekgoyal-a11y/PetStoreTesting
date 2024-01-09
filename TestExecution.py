@@ -9,7 +9,7 @@ from TestDataManagement import TestDataManagement
 def setup_module():
     global url
     defaults_config = DefaultsConfig.get_instance()
-    defaults_config.read_yaml_file(os.getcwd()+'\\Config.yaml')
+    defaults_config.read_yaml_file(os.getcwd()+'\\Resources\\Config.yaml')
     url = defaults_config.get_config_value("url")
 
 @pytest.mark.parametrize("action, user_id, username, newUsername, firstName, lastName, email, password, phone, userStatus, expected_status_code",
