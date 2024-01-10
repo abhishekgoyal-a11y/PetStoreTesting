@@ -3,7 +3,7 @@
 # Hybrid Automation Framework for API Testing
 
 # Overview
-This project involves the creation of a robust hybrid automation framework designed specifically for API testing. The framework is built from scratch and utilizes various technologies such as Python, Pytest, Requests, Pandas, Git, GitHub, and PyYAML.
+This project involves the creation of a robust hybrid automation framework designed specifically for API testing. The framework is built from scratch and utilizes various technologies such as Python, Pytest, Requests, Pandas, and PyYAML.
 
 # Features
 
